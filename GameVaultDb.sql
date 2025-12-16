@@ -74,19 +74,19 @@ INSERT INTO games (title, price, release_date, rating, developer_id) VALUES
 ('DOOM Eternal', 599.99, '2020-03-20', 8.8, 3),
 ('Half-Life 2', 299.99, '2004-11-16', 9.6, 4),
 ('CS:GO', 0.00, '2012-08-21', 9.0, 4),
-('Assassinís Creed Valhalla', 749.99, '2020-11-10', 8.6, 5),
+('Assassin‚Äôs Creed Valhalla', 749.99, '2020-11-10', 8.6, 5),
 ('Far Cry 6', 699.99, '2021-10-07', 8.2, 5);
 
 
 INSERT INTO games_genres (game_id, genre_id) VALUES
-(1, 1), (1, 2),          -- The Witcher 3 ? RPG, Open World
+(1, 1), (1, 2),          -- The Witcher 3 - RPG, Open World
 (2, 1), (2, 2),          -- Cyberpunk 2077
-(3, 2),                  -- GTA V ? Open World
-(4, 2),                  -- RDR2 ? Open World
+(3, 2),                  -- GTA V - Open World
+(4, 2),                  -- RDR2 - Open World
 (5, 1), (5, 2),          -- Skyrim
-(6, 4),                  -- DOOM Eternal ? FPS
-(7, 4),                  -- Half-Life 2 ? FPS
-(8, 4),                  -- CS:GO ? FPS
+(6, 4),                  -- DOOM Eternal - FPS
+(7, 4),                  -- Half-Life 2 - FPS
+(8, 4),                  -- CS:GO - FPS
 (9, 1), (9, 2),          -- AC Valhalla
 (10, 2);                 -- Far Cry 6
 
@@ -96,7 +96,7 @@ UPDATE games
 SET price = price * 0.90;
 
 
--- Cyberpunk 2077 rating g¸ncelleme
+-- Cyberpunk 2077 rating g√ºncelleme
 UPDATE games
 SET rating = 9.0
 WHERE title = 'Cyberpunk 2077';
@@ -105,7 +105,7 @@ WHERE title = 'Cyberpunk 2077';
 DELETE FROM games
 WHERE title = 'CS:GO';
 
--- T¸m oyunlar ve geli˛tiricileri
+-- T√ºm oyunlar ve geli√ætiricileri
 SELECT 
     g.title,
     g.price,
@@ -114,7 +114,7 @@ FROM games g
 JOIN developers d ON g.developer_id = d.id;
 
 
--- RPG oyunlar˝
+-- RPG oyunlar√Ω
 SELECT 
     g.title,
     g.rating
@@ -123,13 +123,13 @@ JOIN games_genres gg ON g.id = gg.game_id
 JOIN genres gr ON gg.genre_id = gr.id
 WHERE gr.name = 'RPG';
 
--- 500 TL ¸zeri oyunlar
+-- 500 TL √ºzeri oyunlar
 SELECT title, price
 FROM games
 WHERE price > 500
 ORDER BY price DESC;
 
--- ›Áinde "i" geÁen oyunlar
+-- √ù√ßinde "i" ge√ßen oyunlar
 SELECT title
 FROM games
 WHERE title LIKE '%i%';
